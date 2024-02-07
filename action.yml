@@ -22,3 +22,4 @@ runs:
         GITHUB_TOKEN: ${{ inputs.repo-token }}
         REPOSITORY_NAME: ${{ github.event.repository.name }}
         GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        LABEL_MESSAGE: ${{ inputs.label-message }}
