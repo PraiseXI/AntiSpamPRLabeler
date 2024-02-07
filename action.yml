@@ -20,3 +20,5 @@ runs:
       run: ${{ github.action_path }}/AntiSpamPRLabeler.ps1 -GITHUB_TOKEN ${{ inputs.repo-token }} -MAX_CHANGES_FOR_LABEL ${{ inputs.max-changes-for-label }} -LABEL_MESSAGE "${{ inputs.label-message }}"
       env:
         GITHUB_TOKEN: ${{ inputs.repo-token }}
+        REPOSITORY_NAME: ${{ github.event.repository.name }}
+        GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
