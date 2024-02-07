@@ -50,6 +50,7 @@ foreach ($pr in $response) {
     $deletions = $pr.deletions
     $totalChanges = $additions + $deletions
 
+    Write-Host "PRVariable: $pr"
     Write-Host "repoOwner: $repoOwner"
     Write-Host "repoName: $repoName"
     Write-Host "GITHUB_TOKEN: $GITHUB_TOKEN"
