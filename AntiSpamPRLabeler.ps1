@@ -1,6 +1,6 @@
 # Assuming repoOwner, repoName, and GITHUB_TOKEN are set as environment variables or action inputs
-$repoOwner = `${{ github.repository_owner }}`
-$repoName = `${{ github.event.repository.name }}`
+$repoOwner = $env:GITHUB_REPOSITORY_OWNER
+$repoName = $env:REPOSITORY_NAME
 $GITHUB_TOKEN = $env:GITHUB_TOKEN
 $maxChangesForLabel = $env:MAX_CHANGES_FOR_LABEL
 $labelMessage = $env:LABEL_MESSAGE
