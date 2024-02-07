@@ -37,7 +37,8 @@ function Add-CommentToPullRequest {
         Accept        = "application/vnd.github.v3+json"
     } -Body $body -ContentType "application/json"
 }
-
+Write-Output $repoOwner
+Write-Output $repoName
 $uri = "https://api.github.com/repos/$repoOwner/$repoName/pulls?state=open"
 $response = Invoke-RestMethod -Uri $uri -Method Get -Headers @{
     Authorization = $authHeader
