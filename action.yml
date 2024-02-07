@@ -23,3 +23,4 @@ runs:
         REPOSITORY_NAME: ${{ github.event.repository.name }}
         GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         LABEL_MESSAGE: ${{ inputs.label-message }}
+        MAX_CHANGES_FOR_LABEL: ${{ inputs.max-changes-for-label }}
