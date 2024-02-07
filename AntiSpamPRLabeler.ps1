@@ -44,10 +44,23 @@ $response = Invoke-RestMethod -Uri $uri -Method Get -Headers @{
 }
 
 foreach ($pr in $response) {
+
     $prNumber = $pr.number
     $additions = $pr.additions
     $deletions = $pr.deletions
     $totalChanges = $additions + $deletions
+
+    Write-Host "repoOwner: $repoOwner"
+    Write-Host "repoName: $repoName"
+    Write-Host "GITHUB_TOKEN: $GITHUB_TOKEN"
+    Write-Host "maxChangesForLabel: $maxChangesForLabel"
+    Write-Host "labelMessage: $labelMessage"
+    Write-Host "authHeader: $authHeader"
+    Write-Host "prNumber: $prNumber"
+    Write-Host "additions: $additions"
+    Write-Host "deletions: $deletions"
+    Write-Host "totalChanges: $totalChanges"
+
 
     if ($totalChanges -le $maxChangesForLabel) {
         Add-LabelToPullRequest -prNumber $prNumber -label "Potential Spam"
