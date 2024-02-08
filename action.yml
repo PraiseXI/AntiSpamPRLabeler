@@ -24,3 +24,4 @@ runs:
         GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         LABEL_MESSAGE: ${{ inputs.label-message }}
         MAX_CHANGES_FOR_LABEL: ${{ inputs.max-changes-for-label }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
