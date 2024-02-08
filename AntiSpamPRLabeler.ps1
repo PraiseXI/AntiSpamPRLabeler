@@ -46,6 +46,9 @@ Write-Host "maxChangesForLabel: $maxChangesForLabel"
 Write-Host "labelMessage: $labelMessage"
 
 $uri = "https://api.github.com/$repoOwner/$repoName/pull/$currentPRNumber"
+
+Write-Host "URI: $uri"
+
 $response = Invoke-RestMethod -Uri $uri -Method Get -Headers @{
     Authorization = $authHeader
     Accept        = "application/vnd.github.v3+json"
