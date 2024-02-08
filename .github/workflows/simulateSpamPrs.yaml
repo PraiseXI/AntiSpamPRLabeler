@@ -9,16 +9,6 @@ inputs:
   access-token:
     description: 'The GitHub token for authentication.'
     required: true
-  username:
-    description: 'The GitHub username or organization name owning the repository.'
-    required: true
-  repo:
-    description: 'The repository name where pull requests will be created.'
-    required: true
-  main-branch:
-    description: 'The main branch to create pull requests against.'
-    required: true
-    default: 'main'
 
 jobs:
   create-pull-requests:
