@@ -66,6 +66,9 @@ jobs:
         label-message: 'Custom message for labeled PRs.' 
         # Optional, your custom message here
 ```
+
+> See an example of how it works in my test [repo](https://github.com/PraiseXI/spam-test-repo/pulls)
+
 ## Contributing
 Contributions to the PR Labeler and Commenter Action are welcome! Please submit pull requests or open issues with your suggestions.
 
