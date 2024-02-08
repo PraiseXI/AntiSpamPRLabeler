@@ -4,7 +4,7 @@ This GitHub Action automatically labels and comments on pull requests based on t
 
 ## Prerequisites
 
-This action requires the `GITHUB_TOKEN` with permissions to fetch PRs and add labels and comments. The action uses this token to authenticate API requests, ensuring secure and permissioned interactions with your repository.
+This action requires the `GITHUB_TOKEN` with permission to fetch PRs and add labels and comments. The action uses this token to authenticate API requests, ensuring secure and permissioned interactions with your repository.
 
 ### Workflow Permissions
 
@@ -71,5 +71,3 @@ Contributions to the PR Labeler and Commenter Action are welcome! Please submit 
 
 ## License
 Distributed under the MIT License. See [LICENSE](https://github.com/PraiseXI/AntiSpamPRLabeler/blob/main/LICENSE) for more information.
-
-##ADD IMPORTANT INFO ABOUT WORKFLOW PERMISSIONS IN SETTINGS
