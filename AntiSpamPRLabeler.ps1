@@ -5,6 +5,7 @@ $GITHUB_TOKEN = $env:GITHUB_TOKEN
 $maxChangesForLabel = $env:MAX_CHANGES_FOR_LABEL
 $labelMessage = $env:LABEL_MESSAGE
 $authHeader = "Bearer $GITHUB_TOKEN"
+$currentPRNumber = $env:PR_NUMBER
 
 function Add-LabelToPullRequest {
     param (
@@ -37,34 +38,31 @@ function Add-CommentToPullRequest {
         Accept        = "application/vnd.github.v3+json"
     } -Body $body -ContentType "application/json"
 }
-$uri = "https://api.github.com/repos/$repoOwner/$repoName/pulls?state=open"
+$uri = "https://api.github.com/repos/$repoOwner/$repoName/pull/$currentPRNumber"
 $response = Invoke-RestMethod -Uri $uri -Method Get -Headers @{
     Authorization = $authHeader
     Accept        = "application/vnd.github.v3+json"
 }
+$currentPR = $response
 
-foreach ($pr in $response) {
+$additions = $currentPR.additions
+$deletions = $currentPR.deletions
+$totalChanges = $additions + $deletions
 
-    $prNumber = $pr.number
-    $additions = $pr.additions
-    $deletions = $pr.deletions
-    $totalChanges = $additions + $deletions
-
-    Write-Host "PRVariable: $pr"
-    Write-Host "repoOwner: $repoOwner"
-    Write-Host "repoName: $repoName"
-    Write-Host "GITHUB_TOKEN: $GITHUB_TOKEN"
-    Write-Host "maxChangesForLabel: $maxChangesForLabel"
-    Write-Host "labelMessage: $labelMessage"
-    Write-Host "authHeader: $authHeader"
-    Write-Host "prNumber: $prNumber"
-    Write-Host "additions: $additions"
-    Write-Host "deletions: $deletions"
-    Write-Host "totalChanges: $totalChanges"
+Write-Host "PRVariable: $pr"
+Write-Host "repoOwner: $repoOwner"
+Write-Host "repoName: $repoName"
+Write-Host "GITHUB_TOKEN: $GITHUB_TOKEN"
+Write-Host "maxChangesForLabel: $maxChangesForLabel"
+Write-Host "labelMessage: $labelMessage"
+Write-Host "authHeader: $authHeader"
+Write-Host "additions: $additions"
+Write-Host "deletions: $deletions"
+Write-Host "totalChanges: $totalChanges"
+Write-Host "Current PR Number: $currentPRNumber"
 
 
-    if ($totalChanges -le $maxChangesForLabel) {
-        Add-LabelToPullRequest -prNumber $prNumber -label "Potential Spam"
-        Add-CommentToPullRequest -prNumber $prNumber -comment $labelMessage
-    }
+if ($totalChanges -le $maxChangesForLabel) {
+    Add-LabelToPullRequest -prNumber $currentPRNumber -label "Potential Spam"
+    Add-CommentToPullRequest -prNumber $currentPRNumber -comment $labelMessage
 }
