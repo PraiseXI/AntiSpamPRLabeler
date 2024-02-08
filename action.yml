@@ -17,7 +17,7 @@ runs:
   steps:
     - name: Label and comment on PRs
       shell: pwsh
-      run: ${{ github.action_path }}/AntiSpamPRLabeler.ps1
+      run: ${{ github.action_path }}/scripts/AntiSpamPRLabeler.ps1
       env:
         GITHUB_TOKEN: ${{ inputs.repo-token }}
         REPOSITORY_NAME: ${{ github.event.repository.name }}
