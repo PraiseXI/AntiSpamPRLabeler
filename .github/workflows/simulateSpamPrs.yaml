@@ -1,0 +1,28 @@
+name: 'Automated PR Creation'
+description: 'Creates realistic and spammy pull requests for testing purposes.'
+on:
+  push:
+    branches:
+      - main
+
+inputs:
+  access-token:
+    description: 'The GitHub token for authentication.'
+    required: true
+
+jobs:
+  create-pull-requests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Automated PR Creation
+        shell: pwsh
+        run: |
+          ./.github/utilities/AutomatedPRCreation.ps1
+        env:
+          ACCESS_TOKEN: ${{ inputs.access-token }}
+          USERNAME: ${{ github.repository_owner}}
+          REPO: ${{ github.event.repository.name }}
+          MAIN_BRANCH: ${{ github.master_branch }}
