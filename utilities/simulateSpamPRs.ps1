@@ -1,4 +1,4 @@
-# Configuration parameters
+# Configuration parameters (change as necessary)
 $accessToken = $env:ACCESS_TOKEN
 $username = $env:USERNAME
 $repo = $env:REPO
