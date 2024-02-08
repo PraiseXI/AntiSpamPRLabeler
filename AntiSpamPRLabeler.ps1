@@ -38,6 +38,13 @@ function Add-CommentToPullRequest {
         Accept        = "application/vnd.github.v3+json"
     } -Body $body -ContentType "application/json"
 }
+
+Write-Host "repoOwner: $repoOwner"
+Write-Host "repoName: $repoName"
+Write-Host "Current PR Number: $currentPRNumber"
+Write-Host "maxChangesForLabel: $maxChangesForLabel"
+Write-Host "labelMessage: $labelMessage"
+
 $uri = "https://api.github.com/repos/$repoOwner/$repoName/pull/$currentPRNumber"
 $response = Invoke-RestMethod -Uri $uri -Method Get -Headers @{
     Authorization = $authHeader
@@ -50,16 +57,11 @@ $deletions = $currentPR.deletions
 $totalChanges = $additions + $deletions
 
 Write-Host "PRVariable: $pr"
-Write-Host "repoOwner: $repoOwner"
-Write-Host "repoName: $repoName"
-Write-Host "GITHUB_TOKEN: $GITHUB_TOKEN"
-Write-Host "maxChangesForLabel: $maxChangesForLabel"
-Write-Host "labelMessage: $labelMessage"
+
 Write-Host "authHeader: $authHeader"
 Write-Host "additions: $additions"
 Write-Host "deletions: $deletions"
 Write-Host "totalChanges: $totalChanges"
-Write-Host "Current PR Number: $currentPRNumber"
 
 
 if ($totalChanges -le $maxChangesForLabel) {
