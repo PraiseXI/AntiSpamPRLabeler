@@ -23,7 +23,7 @@ To incorporate this action into your workflow, add the following step to your Gi
 
 ```yaml
 - name: Label and Comment PRs
-  uses: PraiseXI/AntiSpamPRLabeler@v1
+  uses: PraiseXI/AntiSpamPRLabeler@v1.2.0
   with:
     repo-token: ${{ secrets.GITHUB_TOKEN }}
     max-changes-for-label: '2' #default is 2
