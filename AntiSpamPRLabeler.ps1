@@ -45,7 +45,7 @@ Write-Host "Current PR Number: $currentPRNumber"
 Write-Host "maxChangesForLabel: $maxChangesForLabel"
 Write-Host "labelMessage: $labelMessage"
 
-$uri = "https://api.github.com/$repoOwner/$repoName/pull/$currentPRNumber"
+$uri = "https://api.github.com/repos/$repoOwner/$repoName/pull/$currentPRNumber"
 
 Write-Host "URI: $uri"
 
