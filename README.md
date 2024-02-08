@@ -59,7 +59,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Label and Comment PRs
-      uses: PraiseXI/AntiSpamPRLabeler@v1
+      uses: PraiseXI/AntiSpamPRLabeler@v1.2.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         max-changes-for-label: '2' # Optional, default is 2
