@@ -1,4 +1,4 @@
-name: 'PR Labeler and Commenter'
+name: 'AntiSpam PR Labeler and Commenter'
 description: 'Automatically labels and comments on pull requests based on the number of changes.'
 inputs:
   repo-token:
