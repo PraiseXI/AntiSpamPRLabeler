@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiSpam PR Labeler - Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🛡️</span>
+                    <h1>AntiSpam PR Labeler</h1>
+                </div>
+                <p class="tagline">Automatically detect and label potential spam pull requests</p>
+            </div>
+        </header>
+
+        <!-- Problem Statement -->
+        <section class="problem-section">
+            <div class="content-wrapper">
+                <h2>The Problem</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">⚠️</div>
+                        <h3>Spam PRs</h3>
+                        <p>Malicious or low-effort pull requests with minimal changes can clutter repositories and waste maintainer time.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">⏰</div>
+                        <h3>Manual Review</h3>
+                        <p>Manually reviewing every PR to identify potential spam is time-consuming and inconsistent.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">🔍</div>
+                        <h3>Pattern Recognition</h3>
+                        <p>Spam PRs often have very few changes (1-2 lines) but legitimate PRs can vary widely in size.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="solution-section">
+            <div class="content-wrapper">
+                <h2>The Solution</h2>
+                <div class="solution-content">
+                    <div class="solution-text">
+                        <h3>Automated Detection</h3>
+                        <p>AntiSpam PR Labeler automatically analyzes pull requests and flags those with suspiciously few changes as "Potential Spam".</p>
+                        
+                        <div class="features">
+                            <div class="feature" data-aos="fade-up" data-aos-delay="100">
+                                <span class="feature-icon">✅</span>
+                                <span>Automatic labeling based on change count</span>
+                            </div>
+                            <div class="feature" data-aos="fade-up" data-aos-delay="200">
+                                <span class="feature-icon">💬</span>
+                                <span>Adds explanatory comments</span>
+                            </div>
+                            <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                                <span class="feature-icon">⚙️</span>
+                                <span>Configurable threshold (default: 2 changes)</span>
+                            </div>
+                            <div class="feature" data-aos="fade-up" data-aos-delay="400">
+                                <span class="feature-icon">🔧</span>
+                                <span>Easy GitHub Actions integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="pr-example floating">
+                            <div class="pr-header">
+                                <span class="pr-title">Example Pull Request</span>
+                                <span class="spam-label pulse">Potential Spam</span>
+                            </div>
+                            <div class="pr-stats">
+                                <span class="stat additions">+1 addition</span>
+                                <span class="stat deletions">-0 deletions</span>
+                            </div>
+                            <div class="pr-comment">
+                                💬 This PR has been automatically labeled as "Potential Spam" due to its size. Please review.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Example Showcase -->
+        <section class="live-example-section">
+            <div class="content-wrapper">
+                <div class="live-example-header">
+                    <h2>🚀 See It In Action</h2>
+                    <p class="live-example-subtitle">Check out real examples of the AntiSpam PR Labeler working in a live repository</p>
+                </div>
+                
+                <div class="live-example-container">
+                    <div class="live-example-content">
+                        <div class="live-example-text">
+                            <h3>Real-World Implementation</h3>
+                            <p>Visit our test repository to see the AntiSpam PR Labeler in action! You can see:</p>
+                            
+                            <div class="live-features">
+                                <div class="live-feature">
+                                    <span class="live-feature-icon">🔍</span>
+                                    <div class="live-feature-text">
+                                        <strong>Automatic Detection</strong>
+                                        <p>Real PRs being automatically flagged as potential spam</p>
+                                    </div>
+                                </div>
+                                <div class="live-feature">
+                                    <span class="live-feature-icon">💬</span>
+                                    <div class="live-feature-text">
+                                        <strong>Smart Comments</strong>
+                                        <p>Helpful explanatory comments added to flagged PRs</p>
+                                    </div>
+                                </div>
+                                <div class="live-feature">
+                                    <span class="live-feature-icon">🏷️</span>
+                                    <div class="live-feature-text">
+                                        <strong>Clear Labels</strong>
+                                        <p>"Potential Spam" labels for easy identification</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="live-example-cta">
+                            <div class="live-example-preview">
+                                <div class="browser-mockup">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="browser-url">github.com/PraiseXI/spam-test-repo</div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <div class="github-pr-list">
+                                            <div class="github-pr-item">
+                                                <span class="pr-icon">🔄</span>
+                                                <span class="pr-title-text">Fix typo in README</span>
+                                                <span class="pr-label-spam">Potential Spam</span>
+                                            </div>
+                                            <div class="github-pr-item">
+                                                <span class="pr-icon">🔄</span>
+                                                <span class="pr-title-text">Update version number</span>
+                                                <span class="pr-label-spam">Potential Spam</span>
+                                            </div>
+                                            <div class="github-pr-item">
+                                                <span class="pr-icon">✅</span>
+                                                <span class="pr-title-text">Add new feature implementation</span>
+                                                <span class="pr-label-normal">enhancement</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="cta-buttons">
+                                <a href="https://github.com/PraiseXI/spam-test-repo/pulls" target="_blank" class="cta-button primary">
+                                    <span class="cta-icon">👀</span>
+                                    View Live Examples
+                                </a>
+                                <a href="https://github.com/PraiseXI/AntiSpamPRLabeler" target="_blank" class="cta-button secondary">
+                                    <span class="cta-icon">⭐</span>
+                                    Star on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="demo-section">
+            <div class="content-wrapper">
+                <h2>Try It Yourself</h2>
+                <p class="demo-description">Enter PR details to see if it would be flagged as potential spam</p>
+                
+                <div class="demo-container">
+                    <div class="demo-inputs">
+                        <div class="input-group">
+                            <label for="additions">Lines Added</label>
+                            <input type="number" id="additions" min="0" value="1" />
+                        </div>
+                        <div class="input-group">
+                            <label for="deletions">Lines Deleted</label>
+                            <input type="number" id="deletions" min="0" value="0" />
+                        </div>
+                        <div class="input-group">
+                            <label for="threshold">Spam Threshold</label>
+                            <input type="number" id="threshold" min="1" value="2" />
+                        </div>
+                        <button class="check-btn" onclick="checkPR()">Check PR</button>
+                    </div>
+                    
+                    <div class="demo-result" id="result">
+                        <div class="result-content">
+                            <div class="result-icon">🔍</div>
+                            <h3>Enter PR details to see the result</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage -->
+        <section class="usage-section">
+            <div class="content-wrapper">
+                <h2>How to Use</h2>
+                <div class="usage-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Setup Permissions</h3>
+                            <p>Enable "Read and write permissions" in your repository's Actions settings.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Add to Workflow</h3>
+                            <p>Create a workflow file in <code>.github/workflows/</code> directory.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Configure Action</h3>
+                            <p>Use the action with your desired settings and thresholds.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <div class="code-header">
+                        <span>Example Workflow</span>
+                        <button class="copy-btn" onclick="copyCode()">Copy</button>
+                    </div>
+                    <pre><code id="workflow-code">name: Automate PR Labeling
+
+on: [pull_request]
+
+jobs:
+  label-and-comment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Label and Comment PRs
+      uses: PraiseXI/AntiSpamPRLabeler@v1.2.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        max-changes-for-label: '2'
+        label-message: 'This PR has been automatically labeled as "Potential Spam" due to its size. Please review.'</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="content-wrapper">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="https://github.com/PraiseXI/AntiSpamPRLabeler" target="_blank">GitHub Repository</a>
+                        <a href="https://github.com/PraiseXI/spam-test-repo/pulls" target="_blank">Live Example</a>
+                        <a href="https://github.com/marketplace/actions/antispam-pr-labeler-and-commenter" target="_blank">GitHub Marketplace</a>
+                    </div>
+                    <p class="footer-text">Made with ❤️ by PraiseXI</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
