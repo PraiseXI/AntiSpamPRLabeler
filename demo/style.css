@@ -112,8 +112,9 @@ body {
 
 .problem-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
 }
 
 .problem-card {
@@ -144,6 +145,10 @@ body {
 .problem-card p {
     color: #666;
     line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Solution Section */
@@ -984,6 +989,10 @@ body {
     border: 1px solid #e1e8ed;
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .problem-card::before {
