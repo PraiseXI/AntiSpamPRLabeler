@@ -1,9 +1,7 @@
 name: 'Automated PR Creation'
 description: 'Creates realistic and spammy pull requests for testing purposes.'
 on:
-  push:
-    branches:
-      - main
+ workflow_dispatch:
 
 inputs:
   access-token:
